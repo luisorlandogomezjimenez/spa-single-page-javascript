@@ -1,9 +1,14 @@
 import {pages} from '../controllers/index'
 
-let content = document.getElementById("root");
+
 
 const router = async (route) => {
+  let content = document.getElementById("root");
   content.innerHTML = '';
+
+  console.log(route);
+  
+
   switch (route) {
     case "#/": {
       return content.appendChild(pages.home());
@@ -16,7 +21,7 @@ const router = async (route) => {
       return console.log("products...!!");
 
     default:
-      return console.log("404 ...!!");
+      return content.appendChild(pages.notFound());
   }
 };
 
